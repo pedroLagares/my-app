@@ -24,6 +24,12 @@ app.post('/', async (req, res) => {
   return res.send(filme);
 });
 
+app.post('/saveText', async (req, res) => {
+  const { text } = req.body;
+
+  return res.send(text);
+});
+
 app.put('/:id', async (req, res) => {
   const filme = await Filme.findByIdAndUpdate(req.params.id, {
     title: req.body.title,
