@@ -1,12 +1,8 @@
 import React from 'react';
-import HomePage from './src/frontend/pages/HomePage';
-import LoginPage from './src/frontend/pages/LoginPage';
+import Routes from './src/frontend/routes/routes';
 
 export default function App() {
   return (
-    <>
-      {/* <HomePage /> */}
-      <LoginPage />
-    </>
+    <Routes />
   );
 }
