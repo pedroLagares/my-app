@@ -21,11 +21,9 @@ exports.getSchema = function () {
     },
   });
 
-  UsuarioSchema.pre('save', async (next) => {
-    // console.log(this.senha)
+  UsuarioSchema.pre('save', async function (next) {
     const hash = await bcrypt.hash(this.senha, 10);
     this.senha = hash;
-    // console.log(hash)
     next();
   });
 

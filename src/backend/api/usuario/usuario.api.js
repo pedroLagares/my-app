@@ -23,6 +23,7 @@ module.exports = {
     }
   },
   login: async (req, res) => {
+    console.log('ooioioi');
     const { email, senha } = req.body;
     try {
       const usuario = await Usuario.findOne({ email }).select('+senha');

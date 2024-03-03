@@ -1,9 +1,7 @@
-import React, { useImperativeHandle, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-import {
-  Alert, StyleSheet, Text, View,
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-web';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -70,7 +68,7 @@ export default function LoginScreen() {
   };
 
   const register = () => {
-    axios.post('http://localhost:3000/register', { usuario })
+    axios.post('http://localhost:3000/usuario/register', { usuario })
       .then((response) => {
         console.log(response);
         toast.success('Usuário registrado com sucesso!');
@@ -82,9 +80,10 @@ export default function LoginScreen() {
   };
 
   const login = () => {
-    axios.post('http://localhost:3000/login', { usuario })
+    axios.post('http://localhost:3000/usuario/login', usuario)
       .then((response) => {
-        navigation.navigate('Home');
+        console.log(response);
+        navigation.navigate('HomeScreen');
       })
       .catch((error) => console.log(error));
   };

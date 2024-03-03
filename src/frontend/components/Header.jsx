@@ -9,7 +9,7 @@ import { Feather } from '@expo/vector-icons';
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#8000ff',
+    backgroundColor: '#63C2D1',
     paddingTop: statusBarHeight,
     flexDirection: 'row',
     paddingStart: 16,
